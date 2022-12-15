@@ -14,11 +14,13 @@
 
 
 <!-- hero area -->
+
+
 <section class="hero-area bg-primary" id="parallax">
     <div class="container">
       <div class="row">
         <div class="col-lg-11 mx-auto">
-          <h1 class="text-white font-tertiary">Hi! I’m <br> Christoher <br> UX designer</h1>
+          <h1 class="text-white font-tertiary">Hi! Welcome to Next Level Training. </h1>
         </div>
       </div>
     </div>
@@ -49,19 +51,30 @@
     <div class="layer" id="l9">
       <img src="{%   static 'images/illustrations/leaf-cyan-2.png' %}" alt="bg-shape">
     </div>
-    <!-- social icon -->
-    <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
-      <li class="mb-3"><a class="text-white" href="{% static 'https://themefisher.com/' %}"><i class="ti-facebook"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="{% static 'https://themefisher.com/' %}"><i class="ti-instagram"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="{% static 'https://themefisher.com/' %}"><i class="ti-dribbble"></i></a></li>
-      <li class="mb-3"><a class="text-white" href="{% static 'https://themefisher.com/' %}"><i class="ti-twitter"></i></a></li>
-    </ul>
-    <!-- /social icon -->
+
+
+            <!-- social icon -->
+
+
+            <!-- <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
+              <li class="mb-3"><a class="text-white" href="{% static 'https://themefisher.com/' %}"><i class="ti-facebook"></i></a></li>
+              <li class="mb-3"><a class="text-white" href="{% static 'https://themefisher.com/' %}"><i class="ti-instagram"></i></a></li>
+              <li class="mb-3"><a class="text-white" href="{% static 'https://themefisher.com/' %}"><i class="ti-dribbble"></i></a></li>
+              <li class="mb-3"><a class="text-white" href="{% static 'https://themefisher.com/' %}"><i class="ti-twitter"></i></a></li>
+            </ul> -->
+
+
+            <!-- /social icon -->
+
+
   </section>
+
+
   <!-- /hero area -->
   
   <!-- about -->
-  <section class="section">
+
+  <!-- <section class="section">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto text-center">
@@ -73,10 +86,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+
   <!-- /about -->
   
   <!-- skills -->
+<!-- 
   <section class="section">
     <div class="container">
       <div class="row">
@@ -126,9 +141,12 @@
       </div>
     </div>
   </section>
+   -->
   <!-- /skills -->
   
   <!-- experience -->
+
+<!-- 
   <section class="section">
     <div class="container">
       <div class="row justify-content-around">
@@ -155,10 +173,13 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+
+  
   <!-- ./experience -->
   
   <!-- education -->
+<!-- 
   <section class="section position-relative">
     <div class="container">
       <div class="row">
@@ -214,10 +235,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- bg image -->
-    <img class="img-fluid edu-bg-image w-100" src="{% static 'images/backgrounds/education-bg.png' %}" alt="bg-image">
-  </section>
+    <!-- <img class="img-fluid edu-bg-image w-100" src="{% static 'images/backgrounds/education-bg.png' %}" alt="bg-image">
+  </section> -->
+  
   <!-- /education -->
   
   <!-- services -->
@@ -225,19 +247,27 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h2 class="section-title">Services</h2>
+          <h2 class="section-title">Technical Trainings</h2>
         </div>
+
+        {% for i in training %}
         <div class="col-md-4 mb-4 mb-md-0">
           <div class="card hover-shadow shadow">
             <div class="card-body text-center px-4 py-5">
               <i class="ti-palette icon mb-5 d-inline-block"></i>
-              <h4 class="mb-4">UI Design</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
+              <h4 class="mb-4"><a class = "text-dark" href="trainingdetails/{{i.id}}">Web development - {{i.days}} days.</a> </h4>
+              <h4 class="card-title"><a class="text-dark" href="trainingdetails/{{i.id}}">{{i}}</a></h4>
+              <p class="cars-text">{{i.syllabus|truncatewords:30|linebreaks}}</p>
+              <a href="trainingdetails/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
+              
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4 mb-md-0">
+        {% endfor %}
+
+
+
+        <!-- <div class="col-md-4 mb-4 mb-md-0">
           <div class="card active-bg-primary hover-shadow shadow">
             <div class="card-body text-center px-4 py-5">
               <i class="ti-vector icon mb-5 d-inline-block"></i>
@@ -256,13 +286,17 @@
                 dolore magna aliqua.</p>
             </div>
           </div>
-        </div>
+        </div> -->
+
+
       </div>
     </div>
   </section>
   <!-- /services -->
   
   <!-- portfolio -->
+
+<!--   
   <section class="section">
     <div class="container">
       <div class="row">
@@ -323,7 +357,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+
+
   <!-- /portfolio -->
   
   <!-- testimonial -->
@@ -417,6 +453,7 @@
   <!-- /client logo slider -->
   
   <!-- blog -->
+<!-- 
   <section class="section">
     <div class="container">
       <div class="row">
@@ -465,6 +502,7 @@
       </div>
     </div>
   </section>
+   -->
   <!-- /blog -->
   
   

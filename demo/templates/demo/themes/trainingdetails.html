@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block title %}
+    
+<section class="section">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-title">Web Development - Python FSD </h2>
+        </div>
+
+        
+        <div class="col-lg-9 col-md-4 text-center hover-shadow pt-3">
+          <div class="">
+            
+            <h4 class="mb-4"> {{training}} </h4>
+            <p>{{ training.days }} -  Days Training</p>
+            <h4 class="mb-4"> Day wise Topics. </h4><hr><hr>
+            <h4>Day-1 : {{training.syllabus1}}</a></h4><hr><hr>
+            <h4>Day-2 : {{training.syllabus2}}</a></h4><hr><hr>
+            <h4>Day-3 : {{training.syllabus3}}</a></h4><hr><hr>
+            {% if training.days == 6 %}
+            <h4>Day-4 : {{training.syllabus4}}</a></h4><hr><hr>
+            <h4>Day-5 : {{training.syllabus5}}</a></h4><hr><hr>
+            <h4>Day-6 : {{training.syllabus6}}</a></h4><hr><hr>
+            {% endif %}
+            <a href="{% url 'demo:training' %}" class="btn btn-xs btn-primary">Return to Training page.</a>
+          </div>
+        </div>
+        
+
+<!--         
+        <div class="col-lg-3 col-md-4 text-center hover-shadow pt-3">
+          <img src="{% static 'images/icons/design.png' %}" class="mb-4" alt="icon">
+          <h4 class="mb-4">Django six days Training.</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.</p>
+        </div>
+        <div class="col-lg-3 col-md-4 text-center hover-shadow pt-3">
+          <img src="{% static 'images/icons/print.png' %}" class="mb-4" alt="icon">
+          <h4 class="mb-4">Deliver</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.</p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+    {% endblock %}
+    
+</body>
+</html>
