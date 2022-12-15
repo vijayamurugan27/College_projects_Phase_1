@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from demo.models import Project
+from demo.models import Project, Blog
 
 
 # Create your views here.
@@ -12,16 +12,21 @@ def about(request):
     return render(request, 'demo//themes/about.html')
 
 def blog(request):
-    return render(request, 'demo//themes/blog.html')
+    blog = Blog.objects.all()
+    context = {'blog': blog}
+    return render(request, 'demo//themes/blog.html', context)
 
 def portfolio(request):
     return render(request, 'demo//themes/portfolio.html')
 
-def contact(request):
+def contact(request):    
     return render(request, 'demo//themes/contact.html')
 
-def blogsingle(request):
-    return render(request, 'demo//themes/blogsingle.html')
+def blogsingle(request, id):
+    blog = Blog.objects.get(id = id)
+    blog1= Blog.objects.all()
+    context = {'blog': blog, 'blog1': blog1}
+    return render(request, 'demo//themes/blogsingle.html', context)
 
 def training(request):
     training = Project.objects.all()

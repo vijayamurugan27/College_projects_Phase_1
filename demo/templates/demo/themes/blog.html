@@ -36,29 +36,34 @@
   <section class="section">
     <div class="container">
       <div class="row">
+        {% for blog in blog %}
           <div class="col-lg-4 col-sm-6 mb-4">
             <article class="card shadow">
-              <img class="rounded card-img-top" src="{% static 'images/blog/post-5.jpg' %}" alt="post-thumb">
+              <a href="{{ blog.pictures.url }}"></a>
+              <img class="rounded card-img-top" src="{{ blog.pictures.url }}" alt="post-thumb" style = "max-height: 200px;">
               <div class="card-body">
-                <h4 class="card-title"><a class="text-dark" href="{% url 'demo:blogsingle' %}">Amazon increase income 1.5 Million</a>
+                <!-- <a href="{{ blog.pictures.url }}">
+                  <img src="{{ blog.pictures.url }}" alt="Blog" style="max-height:200px" class="card-img-top"> -->
+                
+                <h4 class="card-title"><a class="text-dark" href="blogsingle/{{blog.id}}">{{blog.name}}</a>
                 </h4>
-                <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et
-                  dolore magna aliqua.</p>
-                <a href="{% url 'demo:blogsingle' %}" class="btn btn-xs btn-primary">Read More</a>
+                <p class="cars-text">{{blog.message |truncatewords:30|linebreaks}}</p>
+                <a href="blogsingle/{{blog.id}}"   class="btn btn-xs btn-primary">Read More</a>
               </div>
             </article>
           </div>
-        <div class="col-lg-4 col-sm-6 mb-4">
+          {% endfor %}
+
+        <!-- <div class="col-lg-4 col-sm-6 mb-4">
           <article class="card shadow">
             <img class="rounded card-img-top" src="{% static 'images/blog/post-2.jpg' %}" alt="post-thumb">
             <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="{% url 'demo:blogsingle' %}">Amazon increase income 1.5 Million</a>
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
               </h4>
               <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et
                 dolore magna aliqua.</p>
-              <a href="{% url 'demo:blogsingle' %}" class="btn btn-xs btn-primary">Read More</a>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
             </div>
           </article>
         </div>
@@ -66,12 +71,12 @@
           <article class="card shadow">
             <img class="rounded card-img-top" src="{% static 'images/blog/post-3.jpg' %}" alt="post-thumb">
             <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="{% url 'demo:blogsingle' %}">Amazon increase income 1.5 Million</a>
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
               </h4>
               <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et
                 dolore magna aliqua.</p>
-              <a href="{% url 'demo:blogsingle' %}" class="btn btn-xs btn-primary">Read More</a>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
             </div>
           </article>
         </div>
@@ -79,12 +84,12 @@
           <article class="card shadow">
             <img class="rounded card-img-top" src="{% static 'images/blog/post-4.jpg' %}" alt="post-thumb">
             <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="{% url 'demo:blogsingle' %}">Amazon increase income 1.5 Million</a>
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
               </h4>
               <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et
                 dolore magna aliqua.</p>
-              <a href="{% url 'demo:blogsingle' %}" class="btn btn-xs btn-primary">Read More</a>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
             </div>
           </article>
         </div>
@@ -92,12 +97,12 @@
           <article class="card shadow">
             <img class="rounded card-img-top" src="{% static 'images/blog/post-5.jpg' %}" alt="post-thumb">
             <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="{% url 'demo:blogsingle' %}">Amazon increase income 1.5 Million</a>
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
               </h4>
               <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et
                 dolore magna aliqua.</p>
-              <a href="{% url 'demo:blogsingle' %}" class="btn btn-xs btn-primary">Read More</a>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
             </div>
           </article>
         </div>
@@ -105,15 +110,17 @@
           <article class="card shadow">
             <img class="rounded card-img-top" src="{% static 'images/blog/post-2.jpg' %}" alt="post-thumb">
             <div class="card-body">
-              <h4 class="card-title"><a class="text-dark" href="{% url 'demo:blogsingle' %}">Amazon increase income 1.5 Million</a>
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
               </h4>
               <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et
                 dolore magna aliqua.</p>
-              <a href="{% url 'demo:blogsingle' %}" class="btn btn-xs btn-primary">Read More</a>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
             </div>
           </article>
-        </div>
+        </div> -->
+
+
       </div>
     </div>
   </section>

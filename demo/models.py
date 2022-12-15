@@ -28,3 +28,29 @@ class Project(models.Model):
     def __str__(self):
         return self.name
     
+class Blog(models.Model):
+    name = models.CharField(max_length = 200)
+    message1 = models.TextField(null = True, blank = True)
+    message2 = models.TextField(null = True, blank = True)
+    message3 = models.TextField(null = True, blank = True)
+    message4 = models.TextField(null = True, blank = True)
+    message5 = models.TextField(null = True, blank = True)
+    message6 = models.TextField(null = True, blank = True)
+    message7 = models.TextField(null = True, blank = True)
+    message8 = models.TextField(null = True, blank = True)
+    message9 = models.TextField(null = True, blank = True)
+    message10 = models.TextField(null = True, blank = True)
+    message11 = models.TextField(null = True, blank = True)
+    message12 = models.TextField(null = True, blank = True)
+    message13 = models.TextField(null = True, blank = True)
+    message14 = models.TextField(null = True, blank = True)
+    message15 = models.TextField(null = True, blank = True)
+    message16 = models.TextField(null = True, blank = True)
+    message17 = models.TextField(null = True, blank = True)
+    message18 = models.TextField(null = True, blank = True)
+    message19 = models.TextField(null = True, blank = True)
+    message110 = models.TextField(null = True, blank = True)
+    
+    pictures = models.ImageField(upload_to = 'images', null = True, blank = True)
+    def __str__(self):
+        return self.name
