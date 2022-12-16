@@ -54,3 +54,12 @@ class Blog(models.Model):
     pictures = models.ImageField(upload_to = 'images', null = True, blank = True)
     def __str__(self):
         return self.name
+
+    
+class Team(models.Model):
+    name = models.CharField(max_length = 200)
+    expertise = models.CharField(max_length = 50)
+    experience = models.IntegerField()
+    pictures = models.ImageField(upload_to = 'images', null = True, blank = True)
+    def __str__(self):
+        return self.name

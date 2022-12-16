@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from demo import views
+from demo.views import TrainerCreateView, TrainerUpdateView
 app_name = "demo"
 
 urlpatterns = [
@@ -26,7 +27,8 @@ urlpatterns = [
     path('blogsingle/<id>', views.blogsingle, name = 'blogsingle'),
     path('training', views.training, name = 'training'),
     path('trainingdetails/<id>', views.trainingdetails, name = 'trainingdetails'),
-
+    path('TrainerCreateView', TrainerCreateView.as_view(), name = 'TrainerCreateView'),
+    path('<pk>/trainer', TrainerUpdateView.as_view(), name = 'trainer'),
 ]
 
 
