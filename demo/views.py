@@ -56,11 +56,11 @@ class TrainerCreateView(CreateView):
     model = Team
     fields = '__all__'
     template_name = 'demo/themes/cbv/create.html'
-    success_url = '/home'
+    success_url = '/demo/home'
 
 class TrainerUpdateView(UpdateView):
     model = Team
     fields = '__all__'
     template_name = 'demo/themes/cbv/update.html'
-    success_url = '/home'
+    success_url = '/demo/home'
     
