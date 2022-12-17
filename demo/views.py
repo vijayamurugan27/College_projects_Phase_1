@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from demo.models import Project, Blog, Team
+from demo.models import Project, Blog, Team, Contact
+from demo.forms import ContactForm
 
 
 # Create your views here.
@@ -22,7 +23,10 @@ def portfolio(request):
     return render(request, 'demo//themes/portfolio.html')
 
 def contact(request):    
-    return render(request, 'demo//themes/contact.html')
+    form = ContactForm()
+    context = {'form': form}
+    return render(request, 'demo//themes/contact.html', context)
+    # return render(request, 'demo//themes/contact.html')
 
 def blogsingle(request, id):
     blog = Blog.objects.get(id = id)
