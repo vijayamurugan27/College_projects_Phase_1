@@ -259,6 +259,24 @@
       </div>
     </div>
   </section>
+
+  
+ <!-- courses -->
+ <div class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h4 class="font-tertiary">Upcoming Courses</h4>
+        {% for course in course %}
+        <p class="section-lead text-muted">{{ course }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+ </div>
+
+<!-- course -->
+
     {% endblock %}
     
 </body>

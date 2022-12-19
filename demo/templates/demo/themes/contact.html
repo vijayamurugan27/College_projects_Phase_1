@@ -49,10 +49,12 @@
               <textarea name="message" id="message" class="form-control px-0 mb-4"
                 placeholder="Type Message Here" required></textarea>
             </div>
+            
             <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
+              <!-- <button class="btn btn-primary w-100">send</button> -->
               <input type="submit" class="btn btn-primary w-100" value="send">
             </div>
+
           </form>
         </div>
       </div>
@@ -61,16 +63,8 @@
 </section>
 
 <br><br><br><br><br><br>
-      
-<form method="post" action="contact">
-  {% csrf_token %}
-  {{form.as_p}}
-  <div class="col-md-6">
-    <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4" required>
-  </div>
-  <input type="submit" class="btn btn-primary w-60" value="send">
 
-</form>
+
 
 
 

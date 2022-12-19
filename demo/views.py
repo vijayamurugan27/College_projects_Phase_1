@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from demo.models import Project, Blog, Team, Contact
-from demo.forms import ContactForm
+from demo.models import Course
 
 
 # Create your views here.
 def home(request):
+    course = Course.objects.all()
     training = Project.objects.all()
-    context = {'training': training}
+    # context = {'training': training, }
+    context = { 'training': training,'course': course, }
     return render(request, 'demo/themes/home.html', context)
 
 def about(request):
@@ -23,9 +25,7 @@ def portfolio(request):
     return render(request, 'demo//themes/portfolio.html')
 
 def contact(request):    
-    form = ContactForm()
-    context = {'form': form}
-    return render(request, 'demo//themes/contact.html', context)
+    return render(request, 'demo//themes/contact.html')
     # return render(request, 'demo//themes/contact.html')
 
 def blogsingle(request, id):
@@ -36,7 +36,9 @@ def blogsingle(request, id):
 
 def training(request):
     training = Project.objects.all()
-    context = {'training': training}
+    # context = {'training': training}
+    course = Course.objects.all()
+    context = {'training': training, 'course': course}
     return render(request, 'demo//themes/training.html', context)
 
 
@@ -44,14 +46,8 @@ def training(request):
 def trainingdetails(request, id):
     training = Project.objects.get(id=id)
     context = {'training': training}
-    print(type(training.syllabus1))
-    print(type(training.syllabus18))
-    print(training.syllabus1)
-    print(training.syllabus18)
-    if not training.syllabus18:
-        print("Hai")
-    if (training.syllabus18 == None):
-        print("Hello")
+    course = Course.objects.all()
+    context = {'training': training, 'course': course}
     return render(request, 'demo//themes/trainingdetails.html', context)
 
 from django.views.generic import CreateView,  UpdateView
