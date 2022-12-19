@@ -67,6 +67,8 @@ class Team(models.Model):
 class Contact(models.Model):
     name = models.CharField(max_length = 200)
     email = models.EmailField(max_length = 254, null = True, blank = True)
+    mobile_number = models.IntegerField(null = True, blank = True)
+    college_name = models.CharField(max_length =100, null = True, blank = True)
     msg = models.TextField()
     def __str__(self):
         return self.name

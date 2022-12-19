@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from demo.models import Project, Blog, Team, Contact
 from demo.models import Course
+from demo.forms import ContactForm
 
 
 # Create your views here.
@@ -25,7 +26,20 @@ def portfolio(request):
     return render(request, 'demo//themes/portfolio.html')
 
 def contact(request):    
-    return render(request, 'demo//themes/contact.html')
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # name = form.cleaned_data.get('name')
+            # email = form.cleaned_data.get('email')
+            # mobile_number = form.cleaned_data.get('mobile_number')
+            # college_name = form.cleaned_data.get('college_name')
+            # msg = form.cleaned_data.get('msg')
+            # return redirect('demo:portfolio')
+            return redirect('/')
+    context = {'form': form}
+    return render(request, 'demo//themes/contact.html', context)
     # return render(request, 'demo//themes/contact.html')
 
 def blogsingle(request, id):
