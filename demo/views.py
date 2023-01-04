@@ -37,7 +37,7 @@ def contact(request):
             # college_name = form.cleaned_data.get('college_name')
             # msg = form.cleaned_data.get('msg')
             # return redirect('demo:portfolio')
-            return redirect('/')
+            return redirect('/demo/home')
     context = {'form': form}
     return render(request, 'demo//themes/contact.html', context)
     # return render(request, 'demo//themes/contact.html')

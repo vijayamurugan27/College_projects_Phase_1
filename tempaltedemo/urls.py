@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings 
 from django.conf.urls.static import static
-from library import views 
+from demo import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('demo/', include('demo.urls', namespace = 'demo')),
+    path('', views.home, name = 'home'),
     # path('', views.home, name = 'home'),
     path('library/', include('library.urls', namespace = 'library')),
     path('shop/', include('shop.urls', namespace = 'shop')),

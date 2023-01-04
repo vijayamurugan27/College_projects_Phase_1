@@ -15,15 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from library import views 
-# from .views import forms
+from library import views     
 
 from .views import Forms, StudentList, StudentDetail, StudentUpdate, StudentDelete
 
 app_name = "library"
 urlpatterns = [
     
-
+    
     path('home', views.home, name = 'home'),
     path('forms', Forms.as_view(), name = 'forms'),
     path('list', StudentList.as_view(), name = 'list'),

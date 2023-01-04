@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+  {% load crispy_forms_tags %}  
     {% block title %}
     <section class="page-title bg-primary position-relative">
         <div class="container">
@@ -33,37 +34,21 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h2 class="section-title">Contacts.</h2>
+        <h2 class="section-title">Contact Info</h2>
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contacts.</h4>
-
-          <form  class="row" action = 'contact' method="post">
+          <h4 class="mb-80">Contact form</h4>
+          
+          <form  action = 'contact' method="post" class="text-left">
+          <!-- <form  class="row" action = 'contact' method="post"> -->
             {% csrf_token %}
-            
-              
-            <!-- <div class="col-md-6">            
-              {{form}}
+            {{form|crispy}}
+            <br>
+            <div>
+                <!-- <input type="submit" value="send" class="btn btn-primary"> -->
+                <button class="btn btn-primary w-100"  type="submit">Send</button>
             </div>
-            <div class="col-md-6">            
-              <input type="text" id="form.email" name="form.email"  placeholder = "E-mail "class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-md-6">            
-              <input type="text" id="form.mobile_number" name="form.mobile_number"  placeholder = "Mobile Number "class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-md-6">            
-              <input type="text" id="form.college_name" name="form.college_name"  placeholder = "College Name "class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-md-12">
-              <textarea name="form.msg" id="form.msg"  name ="form.msg" placeholder="Type your messages here" class="form-control px-0 mb-4"></textarea>
-            </div>
-            <div class="col-lg-6 col-10 mx-auto">              
-              <input type="submit" class="btn btn-primary w-100" value="send">
-            </div> -->
-            {{form.as_p}}
-            <br><br><br>
-            <input type="submit" value="Submit">
 
             
 
@@ -78,8 +63,80 @@
   </div>
 </section>
 
+<hr>
 
 
+<!-- contact -->
+
+<!-- 
+<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form</h4>
+          <form action="#" class="row">
+
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" placeholder=" Name" class="form-control px-0 mb-4" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Mobile Number" class="form-control px-0 mb-4" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="College Name" class="form-control px-0 mb-4" required>
+            </div>
+            
+            <div class="col-12">
+              <textarea name="message" id="message" class="form-control px-0 mb-4"
+                placeholder="Message or Enguiry." required></textarea>
+            </div>
+            <div class="col-lg-6 col-10 mx-auto">
+              <button class="btn btn-primary w-100">send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ -->
+
+<!-- contact -->
+
+<!-- 
+<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form - crispy forms--2</h4>
+        </div>
+          
+            <form action = 'contact' method="post" class="col">
+            {% csrf_token %}
+              {{form|crispy}}
+              
+              <div class = "col-lg-6 col-10 mx-auto">
+                  <button class="btn btn-primary w-100"  type="submit">Send</button>
+              </div>
+
+            
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</section> -->
 
     {% endblock %}
     

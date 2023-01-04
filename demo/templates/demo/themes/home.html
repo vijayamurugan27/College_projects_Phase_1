@@ -365,13 +365,16 @@
  <!-- courses -->
  <div class="">
   <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h4 class="font-tertiary">Upcoming Courses</h4>
-        {% for course in course %}
-        <p class="section-lead text-muted">{{ course }}</p>
-        {% endfor %}
+    <div class="card hover-shadow shadow card-body align-self-center">
+      <div class="col-12 text-center ">
+        <h3 class="font-tertiary">Upcoming Courses</h3><br><br>
       </div>
+            {% for course in course %}
+            <ul class="list-group col-md-12  ">
+                <strong class="section-lead text-muted list-group-item  ">{{ course|upper }}</strong><br><br>
+            </ul>
+            {% endfor %}
+     
     </div>
   </div>
  </div>
